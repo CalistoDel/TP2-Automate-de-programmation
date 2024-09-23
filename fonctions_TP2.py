@@ -8,7 +8,7 @@ dictionnaire ={"le" : 0, "la" : 0, "chat" : 2, "souris" : 2, "martin" : 4,
 
 
 def conversion(phrase):
-#Calisto, 23/09/24, fonction qui prend en argument une phrase et la transforme en une suite de caractere selon la classe des mots la formant
+#fonction qui prend en argument une phrase et la transforme en une suite de caractere selon la classe des mots la formant
     sequence=[]
     caractere_speciaux=['_','-','!','?',':',',','.']
     phrase_decouper=phrase.split()
@@ -19,14 +19,14 @@ def conversion(phrase):
                 motcorrect+= lettre                 #retire les caractères spéciaux d'un mot
             if lettre in dictionnaire.keys():
                 sequence.append(dictionnaire[lettre])
-            sequence.append(dictionnaire[motcorrect])
+        sequence.append(dictionnaire[motcorrect])
     return sequence
 
 
 
 
 def automate(phrase):
-#Calisto, 23/09/24, fonction qui avec prend en argument d'entrée une phrase et qui renvoie si elle est corect syntaxiquement ou non
+#fonction qui avec prend en argument d'entrée une phrase et qui renvoie si elle est corect syntaxiquement ou non
     sequence=conversion(phrase)
     etat=0                      #initialisation de l'état
     matriceEE=[[1,8,8,5,8,8,8,8,8,8],[8,1,2,8,8,5,6,8,8,8],[8,2,8,8,8,6,8,8,8,8],[8,8,3,8,3,8,8,8,8,8],[4,8,8,7,8,8,8,8,8,8],[8,8,8,9,8,8,9,9,8,9]]
