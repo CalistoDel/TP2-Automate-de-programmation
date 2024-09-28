@@ -1,6 +1,6 @@
 #fait par Calisto DEL AGUILA le 23/09/2024
 #Objectif: création d'un automate de programmation ayant pour but de vérifier si la syntaxe d'une phrase qui lui est donnée est juste ou non
-
+#ToDo: - Programmation de l'automate et test par saise de phrase (FAIT)
 
 dictionnaire ={"le" : 0, "la" : 0, "chat" : 2, "souris" : 2, "martin" : 4,
 "mange" : 3, "la" : 0, "petite" : 1, "joli" : 1, "grosse" : 1,
@@ -19,7 +19,8 @@ def conversion(phrase):
                 motcorrect+= lettre                 #retire les caractères spéciaux d'un mot
             if lettre in dictionnaire.keys():
                 sequence.append(dictionnaire[lettre])
-        sequence.append(dictionnaire[motcorrect])
+            if motcorrect in dictionnaire:
+                sequence.append(dictionnaire[motcorrect])
     return sequence
 
 
@@ -38,3 +39,5 @@ def automate(phrase):
         print("La phrase est correcte")
     else:
         print("La phrase est incorrecte")
+
+
